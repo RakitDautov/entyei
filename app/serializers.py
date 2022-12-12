@@ -17,9 +17,6 @@ class PropertySerializer(ModelSerializer):
         model = Property
         fields = ("key", "value")
 
-    def to_representation(self, instance):
-        return instance.key, instance.value
-
 
 class EntityPostSerializer(ModelSerializer):
 
@@ -30,7 +27,7 @@ class EntityPostSerializer(ModelSerializer):
                 'value': data['data[value]']
             }
         except Exception:
-            print('Некорректные данные ')
+            print('Некорректные данные')
 
 
     class Meta:
